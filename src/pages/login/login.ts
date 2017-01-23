@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import {AuthData} from '../../providers/auth-data'
+import {AuthData} from '../../providers/auth-data';
 import { ToastController } from 'ionic-angular';
 /*
   Generated class for the Login page.
@@ -20,10 +20,6 @@ export class LoginPage {
   password:string
 
   constructor(public navCtrl: NavController, public navParams: NavParams ,private auth:AuthData,private toastCtrl:ToastController ) {}
-
-  // ionViewDidLoad() {
-  //   console.log('ionViewDidLoad LoginPage');
-  // }
 
  login(username, password) {
     this.auth.login(username, password).subscribe(res => {
