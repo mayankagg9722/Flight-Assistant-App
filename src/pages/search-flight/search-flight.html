@@ -20,41 +20,24 @@
   <ion-list>
 
     <ion-item>
-      <ion-label floating>First Name</ion-label>
+      <ion-label floating>Flight Code</ion-label>
       <ion-input type="text" #fname></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label floating>Last Name</ion-label>
+      <ion-label floating>Flight Number</ion-label>
       <ion-input type="text" #lname></ion-input>
     </ion-item>
 
+    <div padding></div>
 
     <ion-item>
-      <ion-label floating>User Name</ion-label>
-      <ion-input type="text" #username></ion-input>
-    </ion-item>
-
-
-    <ion-item>
-      <ion-label floating>Password</ion-label>
-      <ion-input type="password" #password></ion-input>
-    </ion-item>
-
-
-    <ion-item>
-      <ion-label floating>Email</ion-label>
-      <ion-input type="text" #email></ion-input>
-    </ion-item>
-
-
-    <ion-item>
-      <ion-label floating>Mobile Number</ion-label>
-      <ion-input type="text" #number></ion-input>
+      <ion-label>Date</ion-label>
+      <ion-datetime displayFormat="YYYY/MM/DD" name="displayDate" min="2017" max="2018" [(ngModel)]="myDate"></ion-datetime>
     </ion-item>
 
   </ion-list>
-  <button (click)="signup(email.value,password.value,username.value,fname.value,lname.value,number.value)"
-    ion-button round full>Search</button>
+  <button (click)="signup(email.value,password.value,username.value,fname.value,lname.value,number.value)" ion-button round
+    full>Search</button>
 
 </ion-content>

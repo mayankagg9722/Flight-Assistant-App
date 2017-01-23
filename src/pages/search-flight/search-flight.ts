@@ -13,7 +13,11 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class SearchFlightPage {
 
+ myDate:String=new Date().toISOString();
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
+
+ 
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SearchFlightPage');
