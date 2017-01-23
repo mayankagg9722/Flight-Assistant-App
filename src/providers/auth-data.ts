@@ -3,7 +3,6 @@ import { Http, Headers } from '@angular/http';
 import localStorage from 'localStorage';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
-import { ToastController } from 'ionic-angular';
 
 /*
   Generated class for the AuthData provider.

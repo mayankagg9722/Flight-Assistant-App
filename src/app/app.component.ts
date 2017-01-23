@@ -19,7 +19,7 @@ import {SignupPage} from '../pages/signup/signup';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = SignupPage;
+  rootPage: any = SearchFlightPage;
 
   pages: Array<{title: string, component: any}>;
 

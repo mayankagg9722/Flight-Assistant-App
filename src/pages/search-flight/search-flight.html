@@ -11,8 +11,8 @@
     </button>
     <ion-title>Search Your Flight</ion-title>
   </ion-navbar>
-
 </ion-header>
+
 
 
 <ion-content padding>
@@ -21,12 +21,12 @@
 
     <ion-item>
       <ion-label floating>Flight Code</ion-label>
-      <ion-input type="text" #fname></ion-input>
+      <ion-input type="text" #flightcode></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Flight Number</ion-label>
-      <ion-input type="text" #lname></ion-input>
+      <ion-input type="text" #flightnumber></ion-input>
     </ion-item>
 
     <div padding></div>
@@ -37,7 +37,7 @@
     </ion-item>
 
   </ion-list>
-  <button (click)="signup(email.value,password.value,username.value,fname.value,lname.value,number.value)" ion-button round
+  <button (click)="search(flightcode.value,flightnumber.value,myDate)" ion-button round
     full>Search</button>
 
 </ion-content>

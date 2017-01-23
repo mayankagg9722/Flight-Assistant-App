@@ -13,10 +13,14 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class FlightDetailsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad FlightDetailsPage');
+  data: string;
+  arrivalDate:string;
+  departureDate:string;
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    console.log(navParams.get("res"));
+    this.data = navParams.get("res");
+    this.arrivalDate=navParams.get("res").flightStatuses[0].departureDate.dateLocal.substr(0,10);
+    this.departureDate=navParams.get("res").flightStatuses[0].arrivalDate.dateLocal.substr(0,10);
   }
 
 }

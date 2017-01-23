@@ -3,7 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { AuthData } from '../../providers/auth-data';
 import { ToastController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
-import {SearchFlightPage} from '../search-flight'
+import {SearchFlightPage} from '../search-flight/search-flight'
 /*
   Generated class for the Signup page.
 
@@ -124,7 +124,7 @@ export class SignupPage {
         });
         toast.present();
         //push to another page
-        this.navCtrl.push(SignupPage);
+        this.navCtrl.push(SearchFlightPage);
       }
     },
     err=>{

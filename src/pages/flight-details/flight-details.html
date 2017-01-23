@@ -1,13 +1,15 @@
 <!--
-  Generated template for the FlightDetails page.
+  Generated template for the SearchFlight page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>flight-details</ion-title>
+  <ion-navbar color='dark'>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Details</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,4 +17,24 @@
 
 <ion-content padding>
 
+  <ion-list>
+    <div padding>
+      <ion-card>
+        <ion-card-content>
+          Flight name: {{data.appendix.airlines[0].name}}
+          Airports: <br>
+          Departure: {{data.flightStatuses[0].departureAirportFsCode}}<br>
+          Arrival:   {{data.flightStatuses[0].arrivalAirportFsCode}}<br>
+          Flight Duration:{{data.flightStatuses[0].flightDurations.scheduledBlockMinutes}}<br>
+          Departure Terminal:{{data.flightStatuses[0].airportResources.departureTerminal}}<br>
+          Arrival Terminal:{{data.flightStatuses[0].airportResources.arrivalTerminal}}<br>
+          Arrival Date:{{arrivalDate}}<br>
+          Departure Date:{{departureDate}}
+        </ion-card-content>
+      </ion-card>
+      </div>
+  </ion-list>
+
+  <button (click)="add()" ion-button round
+    full>Add</button>
 </ion-content>
