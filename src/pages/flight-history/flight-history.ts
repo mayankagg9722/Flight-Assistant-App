@@ -123,7 +123,7 @@ export class FlightHistoryPage  {
   }
 
   nearby(){
-    this.navCtrl.push(FlightHistoryDetailsPage);
+    this.navCtrl.push(FlightHistoryDetailsPage,{airport:this.arrival});
   }
 
   share(){

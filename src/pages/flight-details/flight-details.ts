@@ -53,8 +53,8 @@ export class FlightDetailsPage implements OnInit{
         });
         directionsDisplay.setMap(map);
         directionsService.route({
-          origin: this.departue+" Airport",
-          destination: this.arrival+" Airport" ,
+          origin: this.departue+" Airport,India",
+          destination: this.arrival+" Airport,India" ,
           travelMode: 'DRIVING'
         }, function(response, status) {
           if (status === 'OK') {

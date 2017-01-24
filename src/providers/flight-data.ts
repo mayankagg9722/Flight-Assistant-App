@@ -88,4 +88,12 @@ export class FlightData {
       });
     }
 
+    geoCodeAirport(airport){
+    return this.http.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${airport}&key=AIzaSyAa5tWYQIdFInqiBXb6nOtn9yy8olYWFVw`)
+      .map(res => res.json())
+      .map((res) => {
+        return res;
+      });
+    }
+
 }

@@ -9,11 +9,14 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>NearBy Places</ion-title>
+    <ion-title>Near By Places</ion-title>
   </ion-navbar> 
 </ion-header>
 
 
 <ion-content padding>
+<input type="hidden" name="lat" id="lat" #lat>
+<input type="hidden" name="lng" id="lng" #lng>
+<div id="map" style="width:100%;height:80vh;" #map></div>
 
 </ion-content>
