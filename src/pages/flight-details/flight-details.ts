@@ -80,7 +80,7 @@ export class FlightDetailsPage {
     }
     else {
       let toast = this.toastCtrl.create({
-        message: 'First login to add yur flights',
+        message: 'First login to add your flights',
         duration: 3000,
         position: 'bottom'
       });

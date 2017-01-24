@@ -15,7 +15,7 @@ import 'rxjs/add/operator/map';
 export class FlightData {
 
   constructor(public http: Http) {
-    console.log('Hello FlightData Provider');
+    // console.log('Hello FlightData Provider');
   }
 
   searchFlight(flightcode, flightnumber,mydate): Observable<any>  {
@@ -28,7 +28,7 @@ export class FlightData {
       "date": mydate
     });
 
-    console.log(data);
+    // console.log(data);
 
     return this.http.post(`http://localhost:3000/details/flight`, data, { headers })
       .map(res => res.json())
@@ -41,7 +41,7 @@ export class FlightData {
     let headers = new Headers();
     let token=localStorage.getItem('auth-token');
     headers.append('Content-Type', 'application/json');
-    console.log(token);
+    // console.log(token);
     headers.append('auth-token',token);
 
     let data = JSON.stringify({
@@ -56,6 +56,36 @@ export class FlightData {
         return res;
       });
     }
+    
 
+    flightHistory():Observable<any>{
+    let headers = new Headers();
+    let token=localStorage.getItem('auth-token');
+    headers.append('Content-Type', 'application/json');
+    headers.append('auth-token',token);
+
+    return this.http.get(`http://localhost:3000/details/flighthistory`, { headers })
+      .map(res => res.json())
+      .map((res) => {
+        return res;
+      });
+    }
+
+    weather(airport_code):Observable<any>{
+    let headers = new Headers();
+    let token=localStorage.getItem('auth-token');
+    headers.append('Content-Type', 'application/json');
+    headers.append('auth-token',token);
+
+     let data = JSON.stringify({
+      "airport": airport_code
+    });
+
+    return this.http.post(`http://localhost:3000/details/weather`, data, { headers })
+      .map(res => res.json())
+      .map((res) => {
+        return res;
+      });
+    }
 
 }
