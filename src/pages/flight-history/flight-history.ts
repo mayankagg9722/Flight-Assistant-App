@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit} from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AuthData } from '../../providers/auth-data';
 import { FlightData } from '../../providers/flight-data';
 import { LoginPage } from '../login/login';
 import { ToastController } from 'ionic-angular';
+import {FlightHistoryDetailsPage} from '../flight-history-details/flight-history-details'
 /*
   Generated class for the FlightHistory page.
 
@@ -16,7 +17,7 @@ import { ToastController } from 'ionic-angular';
   providers: [AuthData, FlightData]
 })
 
-export class FlightHistoryPage {
+export class FlightHistoryPage  {
 
   divShow: boolean = false;
   arrivalDate: string;
@@ -39,7 +40,7 @@ export class FlightHistoryPage {
     if (this.auth.isLoggedIn) {
       // console.log(this.navParams.get("res"));
       this.flightData.flightHistory().subscribe(res => {
-        console.log(res);
+        // console.log(res);
         if (res.status == false) {
           let toast = this.toastCtrl.create({
             message: "Not added any flights yet.",
@@ -50,7 +51,7 @@ export class FlightHistoryPage {
           this.divShow = false;
         }
         else {
-          console.log(res);
+          // console.log(res);
           let ob = res.data.flight.flight;
           this.departureDate = ob.flightStatuses[0].departureDate.dateLocal.substr(0, 10);
           this.arrivalDate = ob.flightStatuses[0].arrivalDate.dateLocal.substr(0, 10);
@@ -90,7 +91,7 @@ export class FlightHistoryPage {
 
   getDepWeather(code) {
     this.flightData.weather(code).subscribe(res => {
-      console.log(res.weather);
+      // console.log(res.weather);
       this.dep_weather=res.weather.temperatureCelsius+'°C'+"\n\tSky Condition:"+res.weather.conditions.skyConditions[0].coverage;
     },
       err => {
@@ -121,5 +122,13 @@ export class FlightHistoryPage {
       () => console.log('Completed');
   }
 
-}
+  nearby(){
+    this.navCtrl.push(FlightHistoryDetailsPage);
+  }
 
+  share(){
+    console.log("share info");
+    //share info to any watsapp contact
+  }
+
+}

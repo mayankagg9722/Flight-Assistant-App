@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit} from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AuthData } from '../../providers/auth-data';
 import { FlightData } from '../../providers/flight-data';
 import { LoginPage } from '../login/login';
 import { ToastController } from 'ionic-angular';
 import {FlightHistoryPage} from '../flight-history/flight-history';
+declare var google: any;
 /*
   Generated class for the FlightDetails page.
 
@@ -16,7 +17,7 @@ import {FlightHistoryPage} from '../flight-history/flight-history';
   templateUrl: 'flight-details.html',
   providers: [AuthData, FlightData]
 })
-export class FlightDetailsPage {
+export class FlightDetailsPage implements OnInit{
 
   arrivalDate: string;
   departureDate: string;
@@ -42,6 +43,27 @@ export class FlightDetailsPage {
     this.arrivalTerminal = ob.flightStatuses[0].airportResources.arrivalTerminal;
     this.departureTerminal = ob.flightStatuses[0].airportResources.departureTerminal;
   }
+
+     ngOnInit() {
+      var directionsService = new google.maps.DirectionsService;
+        var directionsDisplay = new google.maps.DirectionsRenderer;
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 7,
+          center: {lat: 13.0827, lng: 80.2707}
+        });
+        directionsDisplay.setMap(map);
+        directionsService.route({
+          origin: this.departue+" Airport",
+          destination: this.arrival+" Airport" ,
+          travelMode: 'DRIVING'
+        }, function(response, status) {
+          if (status === 'OK') {
+            directionsDisplay.setDirections(response);
+          } else {
+            // window.alert('Directions request failed due to ' + status);
+          }
+        });
+      }
 
   add() {
     if (this.auth.isLoggedIn) {

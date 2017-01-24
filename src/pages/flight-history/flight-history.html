@@ -10,17 +10,25 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Flight History</ion-title>
-  </ion-navbar>
-
+  </ion-navbar> 
 </ion-header>
-
-
 <ion-content padding >
+    <ion-fab top right edge (click)="share()">
+    <button ion-fab>
+      <ion-icon name="share"></ion-icon>
+    </button>
+  </ion-fab> 
 
   <ion-list>
     <div padding [hidden]="!divShow">
+  <ion-fab right bottom (click)="nearby()">
+          <button ion-fab>
+           <ion-icon name="locate"></ion-icon>
+           </button>
+  </ion-fab> 
       <ion-card>
         <ion-card-header>
+          <ion-icon name="jet"></ion-icon>
           <h1>Your Flight Information</h1>
         </ion-card-header>
         <ion-card-content>
@@ -37,6 +45,7 @@
 
          <ion-card>
         <ion-card-header>
+          <ion-icon name="partly-sunny"></ion-icon>
           <h1>Weather: {{departue}} </h1>
         </ion-card-header>
         <ion-card-content>
@@ -46,15 +55,14 @@
 
        <ion-card>
         <ion-card-header>
+          <ion-icon name="cloud"></ion-icon>
           <h1>Weather: {{arrival}} </h1>
         </ion-card-header>
         <ion-card-content>
           Weather:{{ari_weather}}
         </ion-card-content>
-      </ion-card>
-
+      </ion-card> 
     </div>
   </ion-list>
-
 
 </ion-content>
