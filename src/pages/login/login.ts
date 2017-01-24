@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {AuthData} from '../../providers/auth-data';
 import { ToastController } from 'ionic-angular';
+import {SearchFlightPage} from '../search-flight/search-flight';
 /*
   Generated class for the Login page.
 
@@ -32,6 +33,7 @@ export class LoginPage {
           position: 'bottom'
         });
         toast.present();
+        this.navCtrl.push(SearchFlightPage);
       }
     },
     err=>{
@@ -44,6 +46,16 @@ export class LoginPage {
         toast.present();
       }),
     () => console.log('Completed')
+ }
+
+ logout(){
+   this.auth.logout();
+   let toast = this.toastCtrl.create({
+          message: "Logout successfully",
+          duration: 3000,
+          position: 'bottom'
+        });
+        toast.present();
  }
 
 }

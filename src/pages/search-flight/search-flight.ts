@@ -27,8 +27,8 @@ export class SearchFlightPage {
     var mydate=myDateDiv[0]+"/"+myDateDiv[1]+"/"+myDateDiv[2];
     // console.log(mydate);
     this.flightData.searchFlight(flightcode,flightnumber,mydate).subscribe(res=>{
-      // console.log(res);
-      if(!(res.body.error==undefined)){
+      console.log(res.body.flightStatuses.length);
+      if((res.body.error!=undefined) || res.body.flightStatuses.length==0){ 
         let toast = this.toastCtrl.create({
           message: "Incorrect flight code or number",
           duration: 3000,

@@ -36,7 +36,7 @@ export class AuthData {
       .map(res => res.json())
       .map((res) => {
         if (res.success == true) {
-          localStorage.setItem('auth_token', res.token);
+          localStorage.setItem('auth-token', res.token);
           this.loggedIn = true;
         }
         return res;
@@ -44,7 +44,7 @@ export class AuthData {
   }
 
   logout() {
-    localStorage.removeItem('auth_token');
+    localStorage.removeItem('auth-token');
     this.loggedIn = false;
   }
 

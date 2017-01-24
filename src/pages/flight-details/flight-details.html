@@ -20,21 +20,22 @@
   <ion-list>
     <div padding>
       <ion-card>
+        <ion-card-header>
+          <h1>Flight Information</h1>
+        </ion-card-header>
         <ion-card-content>
-          Flight name: {{data.appendix.airlines[0].name}}
-          Airports: <br>
-          Departure: {{data.flightStatuses[0].departureAirportFsCode}}<br>
-          Arrival:   {{data.flightStatuses[0].arrivalAirportFsCode}}<br>
-          Flight Duration:{{data.flightStatuses[0].flightDurations.scheduledBlockMinutes}}<br>
-          Departure Terminal:{{data.flightStatuses[0].airportResources.departureTerminal}}<br>
-          Arrival Terminal:{{data.flightStatuses[0].airportResources.arrivalTerminal}}<br>
-          Arrival Date:{{arrivalDate}}<br>
-          Departure Date:{{departureDate}}
+           Flight name: {{flightName}}<br>
+           Departure: {{departue}}<br> 
+           Arrival: {{arrival}}<br>
+           Flight Duration:{{duration}}<br> 
+           Departure Terminal:{{departureTerminal}}<br>
+           Arrival Terminal:{{arrivalTerminal}}<br>
+           Arrival Date:{{arrivalDate}}<br> 
+           Departure Date:{{departureDate}}
         </ion-card-content>
       </ion-card>
-      </div>
+    </div>
   </ion-list>
 
-  <button (click)="add()" ion-button round
-    full>Add</button>
+  <button (click)="add()" ion-button round full>Add</button>
 </ion-content>
