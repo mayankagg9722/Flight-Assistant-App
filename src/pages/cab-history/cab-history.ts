@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController,ViewController, NavParams } from 'ionic-angular';
 
 /*
   Generated class for the CabHistory page.
@@ -13,10 +13,21 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class CabHistoryPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  divShow:boolean=false;
+   myDate:String=new Date().toISOString();
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CabHistoryPage');
+  constructor(public navCtrl: NavController,public viewCtrl: ViewController, public navParams: NavParams) {
+    // console.log(this.navParams.get("data"));
+    if(this.navParams.get("data")=="postcab"){
+      this.divShow=false;
+    }else{
+       this.divShow=true;
+    }
+  }
+
+
+   dismiss() {
+    this.viewCtrl.dismiss();
   }
 
 }

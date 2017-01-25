@@ -5,14 +5,42 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>cab</ion-title>
+  <ion-navbar color='dark' no-border-bottom>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cab</ion-title>
   </ion-navbar>
-
+    <ion-segment [(ngModel)]="cabs" color="danger">
+      <ion-segment-button value="posted">
+        Cabs Posted
+      </ion-segment-button>
+      <ion-segment-button value="requested">
+        Cabs Requested
+      </ion-segment-button>
+    </ion-segment>
 </ion-header>
 
-
 <ion-content padding>
+ <div [ngSwitch]="cabs">
+    <ion-list *ngSwitchCase="'posted'">
+      <ion-item>
+        <h2>posted</h2>
+      </ion-item>
+    </ion-list>
 
+    <ion-list *ngSwitchCase="'requested'">
+      <ion-item>
+        <h2>requested</h2>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>
+
+<ion-fab right bottom>
+  <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+  <ion-fab-list side="left">
+    <button (click)="openModal('getcab')" ion-button outline>Get A Cab</button>
+    <button (click)="openModal('postcab')" ion-button outline>Post A Cab</button>
+  </ion-fab-list>
+</ion-fab>

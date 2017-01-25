@@ -16,7 +16,7 @@ import {SignupPage} from '../pages/signup/signup';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = SearchFlightPage;
+  rootPage: any = CabPage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -27,9 +27,7 @@ export class MyApp {
     this.pages = [
       {title: 'SearchFlight',component:SearchFlightPage},
       {title: 'FlightHistory',component:FlightHistoryPage},
-      {title: 'FlightHistoryDetails',component:FlightHistoryDetailsPage},
       {title: 'CabPage',component:CabPage},
-      {title: 'CabHistory',component:CabHistoryPage},
       {title: 'Login',component:LoginPage},
       {title: 'Signup',component:SignupPage}
     ];

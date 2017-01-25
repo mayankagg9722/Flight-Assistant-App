@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-
+import { NavController, NavParams,ModalController } from 'ionic-angular';
+import { CabHistoryPage } from '../cab-history/cab-history';
 /*
   Generated class for the Cab page.
 
@@ -11,12 +11,15 @@ import { NavController, NavParams } from 'ionic-angular';
   selector: 'page-cab',
   templateUrl: 'cab.html'
 })
+
 export class CabPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    public modalCtrl: ModalController) { }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CabPage');
+  openModal(data) {
+    let modal = this.modalCtrl.create(CabHistoryPage,{data:data});
+    modal.present();
   }
 
 }
