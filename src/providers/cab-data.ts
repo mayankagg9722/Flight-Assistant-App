@@ -82,7 +82,7 @@ export class CabData {
 
     //only after authentication
 
-    return this.http.get(`http://localhost:3000/cab/postcab`, { headers })
+    return this.http.get(`http://localhost:3000/cab/cabposted`, { headers })
       .map(res => res.json())
       .map((res) => {
         return res;

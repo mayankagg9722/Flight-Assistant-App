@@ -28,7 +28,7 @@ export class CabHistoryPage {
   currentLocation: string;
   destinationLocation: string;
 
-  constructor(public navCtrl: NavController, public viewCtrl: ViewController, public navParams: NavParams, private cabData: CabData, private toastCtrl: ToastController, private auth: AuthData, ) {
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController, public navParams: NavParams, private cabData: CabData, private toastCtrl: ToastController, private auth: AuthData) {
     // console.log(this.navParams.get("data"));
     this.timeStarts=new Date().getHours() + ":" + new Date().getMinutes();
     if (this.navParams.get("data") == "postcab") {

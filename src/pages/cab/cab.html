@@ -11,27 +11,43 @@
     </button>
     <ion-title>Cab</ion-title>
   </ion-navbar>
-    <ion-segment [(ngModel)]="cabs" color="danger">
-      <ion-segment-button value="posted">
-        Cabs Posted
-      </ion-segment-button>
-      <ion-segment-button value="requested">
-        Cabs Requested
-      </ion-segment-button>
-    </ion-segment>
+  <ion-segment [(ngModel)]="cabs" color="danger">
+    <ion-segment-button value="posted">
+      Cabs Posted
+    </ion-segment-button>
+    <ion-segment-button value="requested">
+      Cabs Requested
+    </ion-segment-button>
+  </ion-segment>
 </ion-header>
 
 <ion-content padding>
- <div [ngSwitch]="cabs">
+  <div [ngSwitch]="cabs">
     <ion-list *ngSwitchCase="'posted'">
       <ion-item>
-        <h2>posted</h2>
+        <ion-card>
+          <ion-card-content>
+            {{posteddata.car}} <br>
+            {{posteddata.date}} <br>
+            {{posteddata.time}} <br>
+            {{posteddata.current_location}} <br>
+            {{posteddata.destination}} <br>
+          </ion-card-content>
+        </ion-card>
       </ion-item>
     </ion-list>
 
     <ion-list *ngSwitchCase="'requested'">
       <ion-item>
-        <h2>requested</h2>
+           <ion-card>
+          <ion-card-content>
+            {{requesteddata.car}} <br>
+            {{requesteddata.date}} <br>
+            {{requesteddata.time}} <br>
+            {{requesteddata.current_location}} <br>
+            {{requesteddata.destination}} <br>
+          </ion-card-content>
+        </ion-card>
       </ion-item>
     </ion-list>
   </div>
