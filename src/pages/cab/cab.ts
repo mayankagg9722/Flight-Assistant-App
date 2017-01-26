@@ -15,11 +15,14 @@ import { CabHistoryPage } from '../cab-history/cab-history';
 export class CabPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    public modalCtrl: ModalController) { }
+    public modalCtrl: ModalController) { 
+    }
 
   openModal(data) {
     let modal = this.modalCtrl.create(CabHistoryPage,{data:data});
     modal.present();
   }
+
+
 
 }

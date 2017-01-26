@@ -58,6 +58,7 @@ export class FlightHistoryDetailsPage {
     const mapOptions = {
       center: latLng,
       zoom: 7,
+      componentRestrictions: { country: "IN" }
     }
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
     this.startService(latLng, this.map);

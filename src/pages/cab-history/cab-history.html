@@ -28,8 +28,8 @@
   </ion-item>
 
   <ion-item>
-  <ion-label floating>Start Time(24 hr)</ion-label>
-  <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" ></ion-datetime>
+  <ion-label floating>Start Time (24 Hr)</ion-label>
+  <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="timeStarts" ></ion-datetime>
 </ion-item>
 
   <ion-item>
@@ -43,7 +43,7 @@
   </ion-item>
 
   <ion-item>
-    <ion-label floating>Car</ion-label>
+    <ion-label floating>Car details</ion-label>
     <ion-input type="text" #car></ion-input>
   </ion-item>
 
@@ -52,6 +52,7 @@
     <ion-label floating>Person</ion-label>
     <ion-input type="text" #person></ion-input>
   </ion-item>
+    <button (click)="submit(myDate,timeStarts,car.value,person.value)" ion-button round full>Submit</button>
   </div>
 
   <div [hidden]="divShow">
@@ -59,6 +60,8 @@
     <ion-label floating>Seats</ion-label>
     <ion-input type="text" #seats></ion-input>
   </ion-item>
+    <button (click)="submit(myDate,timeStarts,car.value,seats.value)" ion-button round full>Submit</button>
   </div>
+
 
 </ion-content>

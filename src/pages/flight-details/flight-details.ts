@@ -53,14 +53,14 @@ export class FlightDetailsPage implements OnInit{
         });
         directionsDisplay.setMap(map);
         directionsService.route({
-          origin: this.departue+" Airport,India",
-          destination: this.arrival+" Airport,India" ,
+          origin: this.departue+" Airport",
+          destination: this.arrival+" Airport" ,
           travelMode: 'DRIVING'
         }, function(response, status) {
           if (status === 'OK') {
             directionsDisplay.setDirections(response);
           } else {
-            // window.alert('Directions request failed due to ' + status);
+            console.log(response,status);
           }
         });
       }
