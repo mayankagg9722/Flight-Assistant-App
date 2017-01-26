@@ -33,6 +33,7 @@
             {{posteddata.current_location}} <br>
             {{posteddata.destination}} <br>
           </ion-card-content>
+          <ion-icon (click)="postcabinfo()" name="information-circle"></ion-icon>
         </ion-card>
       </ion-item>
     </ion-list>
@@ -47,6 +48,7 @@
             {{requesteddata.current_location}} <br>
             {{requesteddata.destination}} <br>
           </ion-card-content>
+          <ion-icon (click)="getcabinfo()" name="information-circle"></ion-icon>
         </ion-card>
       </ion-item>
     </ion-list>

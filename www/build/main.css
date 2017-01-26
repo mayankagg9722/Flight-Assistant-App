@@ -22223,6 +22223,11 @@ sub {
   }
 }
 
+page-cab ion-icon {
+  font-size: 35px;
+  padding: 20px;
+}
+
 page-flight-history-details ion-icon {
   font-size: 25px;
 }

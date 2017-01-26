@@ -5,6 +5,7 @@ import { CabData } from '../../providers/cab-data';
 import { ToastController } from 'ionic-angular';
 import { AuthData } from '../../providers/auth-data';
 import { LoginPage } from '../login/login';
+import { AlertController } from 'ionic-angular';
 /*
   Generated class for the Cab page.
 
@@ -24,7 +25,7 @@ export class CabPage {
   cabs:String;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    public modalCtrl: ModalController, private cabData: CabData, private toastCtrl: ToastController, private auth: AuthData) {
+    public modalCtrl: ModalController, private cabData: CabData, private toastCtrl: ToastController, private auth: AuthData,public alertCtrl: AlertController) {
     this.getPosted();
     this.getRequested();
   }
@@ -114,5 +115,99 @@ export class CabPage {
       this.navCtrl.push(LoginPage);
     }
   }
+
+  getcabinfo(){
+        if (this.auth.isLoggedIn) {
+
+      this.cabData.getCabInfo().subscribe(res => {
+        if (res.success == false) {
+          let toast = this.toastCtrl.create({
+            message: "Check Internet Connection",
+            duration: 3000,
+            position: 'bottom'
+          });
+          toast.present();
+        }
+        else {
+          console.log(res);
+          this.showAlert(res.data);
+          // this.requesteddata=res.data;
+        }
+      },
+        err => {
+          console.log(err);
+          let toast = this.toastCtrl.create({
+            message: "Check Internet Connection",
+            duration: 3000,
+            position: 'bottom'
+          });
+          toast.present();
+        }),
+        () => console.log('Completed')
+
+    } else {
+      let toast = this.toastCtrl.create({
+        message: 'First login to request cabs',
+        duration: 3000,
+        position: 'bottom'
+      });
+      toast.present();
+      //push to login
+      this.navCtrl.push(LoginPage);
+    }
+  }
+
+   postcabinfo(){
+        if (this.auth.isLoggedIn) {
+
+      this.cabData.postCabInfo().subscribe(res => {
+        if (res.success == false) {
+          let toast = this.toastCtrl.create({
+            message: "Check Internet Connection",
+            duration: 3000,
+            position: 'bottom'
+          });
+          toast.present();
+        }
+        else {
+          console.log(res);
+          this.showAlert(res.data);
+          // this.requesteddata=res.data;
+        }
+      },
+        err => {
+          console.log(err);
+          let toast = this.toastCtrl.create({
+            message: "Check Internet Connection",
+            duration: 3000,
+            position: 'bottom'
+          });
+          toast.present();
+        }),
+        () => console.log('Completed')
+
+    } else {
+      let toast = this.toastCtrl.create({
+        message: 'First login to request cabs',
+        duration: 3000,
+        position: 'bottom'
+      });
+      toast.present();
+      //push to login
+      this.navCtrl.push(LoginPage);
+    }
+  }
+
+  showAlert(data) {
+    let alert = this.alertCtrl.create({
+      title: 'Found cab results',
+      subTitle: data[0].username+"\nshow mobile number",
+      buttons: ['OK']
+    });
+    alert.present();
+  }
+
+
+
 
 }
