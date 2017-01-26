@@ -21,6 +21,7 @@ export class CabPage {
 
   posteddata:Object;
   requesteddata:Object;
+  cabs:String;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public modalCtrl: ModalController, private cabData: CabData, private toastCtrl: ToastController, private auth: AuthData) {
@@ -48,6 +49,7 @@ export class CabPage {
         else {
           // console.log(res);
           this.posteddata=res.data[0];
+          this.cabs="posted";
         }
       },
         err => {
