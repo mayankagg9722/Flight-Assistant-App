@@ -15,26 +15,65 @@
 </ion-header>
 
 
-<ion-content >
+<ion-content class="page-color">
   <ion-list>
+
+    <ion-card class="background-color">
+        <ion-card-content align="center" color="white">
+           <h1><b> {{flightName}}</b> </h1>
+           <ion-icon name="jet"></ion-icon>
+      </ion-card-content>
+    </ion-card>
+
+
+    <ion-card>
+          <div id="clouds">
+             <div class="card-title">{{departue}}</div>
+            <div class="card-subtitle">DEPARTURE</div><br>
+            <div class="cardtitle">{{arrival}}</div>
+            <div class="cardsubtitle">ARRIVAL</div>
+        <div class="cloud x1"></div>
+         <!--Time for multiple clouds to dance around -->
+        <div class="cloud x2"></div>
+        <div class="cloud x3"></div>
+        <div class="cloud x4"></div>
+        <div class="cloud x5"></div>
+      </div>
+      
+  </ion-card>
+
+
       <ion-card>
         <ion-card-header>
-          <h1>Flight Information</h1>
-          <ion-icon name="jet"></ion-icon>
+          
         </ion-card-header>
-        <div id="map" style="width:100%;height:50vh;"></div>
+    
         <ion-card-content>
-           Flight name: {{flightName}}<br>
-           Departure: {{departue}}<br> 
-           Arrival: {{arrival}}<br>
-           Flight Duration:{{duration}}<br> 
-           Departure Terminal:{{departureTerminal}}<br>
-           Arrival Terminal:{{arrivalTerminal}}<br>
-           Arrival Date:{{arrivalDate}}<br> 
-           Departure Date:{{departureDate}}
-        </ion-card-content>   
+          
+            <h3 style="text-align:center;float:left;">DEPARTURE DATE</h3>
+            <h3 style="text-align:center;float:right;">ARRIVAL DATE</h3>
+            <hr style="clear:both;"/>
+            <h1 style="text-align:center;float:left;">{{departureDate}} </h1>
+            <h1 style="text-align:center;float:right;">{{arrivalDate}}</h1>
+            
+          
+          
+           <!--Flight Duration:{{duration}}<br> 
+           Departure Terminal:{{departureTerminal}}<br>i
+           Arrival Terminal:{{arrivalTerminal}}<br>-->
+           
+        </ion-card-content>  
+      
       </ion-card>
+
+      <ion-card>
+        <ion-card-content>
+           <div id="map" style="width:100%;height:50vh;"></div> 
+        </ion-card-content>
+      </ion-card>
+
   </ion-list>
+
    <ion-fab right bottom (click)="add()">
     <button ion-fab>
       <ion-icon name="plane"></ion-icon>
