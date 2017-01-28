@@ -29,7 +29,6 @@ export class SearchFlightPage implements AfterViewInit{
                 $('.button-inner').click(function() {
                     setTimeout(function() {
                         $('#container').removeClass('beginning');
-                        $('.curvable').addClass('curved');
                         setTimeout(function() {
                             $('#container').addClass('hover');
                             setTimeout(function() {
@@ -42,9 +41,9 @@ export class SearchFlightPage implements AfterViewInit{
                                         $('.curvable').removeClass('curved');
                                     },3000);
                                 }, 600);
-                            }, 2000);
-                        }, 2800);
-                    }, 200);
+                            });
+                        });
+                    });
                 });
     }
 
@@ -67,7 +66,7 @@ export class SearchFlightPage implements AfterViewInit{
       }
       }else{
         let toast = this.toastCtrl.create({
-          message: "Fill Form Completely",
+          message: "Incorrect flight code or number",
           duration: 3000,
           position: 'bottom'
         });
