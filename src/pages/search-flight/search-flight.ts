@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
+import { Component ,AfterViewInit} from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {FlightData} from '../../providers/flight-data';
 import {FlightDetailsPage} from '../flight-details/flight-details';
 import { ToastController } from 'ionic-angular';
+
+declare var $:any;
+
 /*
   Generated class for the SearchFlight page.
 
@@ -14,7 +17,7 @@ import { ToastController } from 'ionic-angular';
   templateUrl: 'search-flight.html',
   providers:[FlightData]
 })
-export class SearchFlightPage {
+export class SearchFlightPage implements AfterViewInit{
 
  myDate:String=new Date().toISOString();
   
@@ -22,23 +25,55 @@ export class SearchFlightPage {
     
   }
 
+  ngAfterViewInit() {
+                $('.button-inner').click(function() {
+                    setTimeout(function() {
+                        $('#container').removeClass('beginning');
+                        $('.curvable').addClass('curved');
+                        setTimeout(function() {
+                            $('#container').addClass('hover');
+                            setTimeout(function() {
+                                $('#container').addClass('fly_away_first');
+                                setTimeout(function() {
+                                    $('#container').addClass('fly_away');
+                                    setTimeout(function(){
+                                        // $('#plate').addClass('front');
+                                        $('#container').removeClass('fly_away fly_away_first hover').addClass('beginning');
+                                        $('.curvable').removeClass('curved');
+                                    },3000);
+                                }, 600);
+                            }, 2000);
+                        }, 2800);
+                    }, 200);
+                });
+    }
+
   search(flightcode,flightnumber,myDate){
     var myDateDiv=myDate.substr(0,10).split('-');
     var mydate=myDateDiv[0]+"/"+myDateDiv[1]+"/"+myDateDiv[2];
     // console.log(mydate);
     this.flightData.searchFlight(flightcode,flightnumber,mydate).subscribe(res=>{
-      console.log(res.body.flightStatuses.length);
-      if((res.body.error!=undefined) || res.body.flightStatuses.length==0){ 
+      console.log(res.body);
+      if(res.body != null){
+        if((res.body.error!=undefined) || res.body.flightStatuses.length==0 ){ 
         let toast = this.toastCtrl.create({
           message: "Incorrect flight code or number",
           duration: 3000,
           position: 'bottom'
         });
         toast.present();
-      }
-      else {
+      }else {
         this.navCtrl.push(FlightDetailsPage,{res:res.body});
       }
+      }else{
+        let toast = this.toastCtrl.create({
+          message: "Fill Form Completely",
+          duration: 3000,
+          position: 'bottom'
+        });
+        toast.present();
+      }
+      
     },
       err => {
         console.log(err);
