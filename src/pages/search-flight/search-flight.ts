@@ -26,7 +26,7 @@ export class SearchFlightPage implements AfterViewInit{
   }
 
   ngAfterViewInit() {
-                $('.button-inner').click(function() {
+                $('.anim').click(function() {
                     setTimeout(function() {
                         $('#container').removeClass('beginning');
                         setTimeout(function() {
