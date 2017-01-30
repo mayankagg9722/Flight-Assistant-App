@@ -30,7 +30,17 @@ export class SignupPage {
         });
         toast.present();
         this.getOtp(username);
-      }else{
+      }
+      else  if (res.success == false) {
+        let toast = this.toastCtrl.create({
+          message: 'Enter OTP',
+          duration: 3000,
+          position: 'bottom'
+        });
+        toast.present();
+        this.getOtp(username);
+      }
+      else{
         let toast = this.toastCtrl.create({
           message: 'Registration unsuccessfully',
           duration: 3000,
@@ -61,6 +71,7 @@ export class SignupPage {
           position: 'bottom'
         });
         toast.present();
+        this.showprompt(username);
       }
     },
     err=>{
