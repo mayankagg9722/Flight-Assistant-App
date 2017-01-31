@@ -19,7 +19,7 @@
   <ion-list>
 
     <ion-card class="background-color">
-        <ion-card-content align="center" color="white">
+        <ion-card-content align="center" class="text-color">
            <h1><b> {{flightName}}</b> </h1>
            <ion-icon name="jet"></ion-icon>
       </ion-card-content>
@@ -43,26 +43,28 @@
   </ion-card>
 
 
-      <ion-card>
+      <ion-card class="background-color">
         <ion-card-header>
           
         </ion-card-header>
     
         <ion-card-content>
-          
-            <h3 style="text-align:center;float:left;">DEPARTURE DATE</h3>
-            <h3 style="text-align:center;float:right;">ARRIVAL DATE</h3>
-            <hr style="clear:both;"/>
-            <h1 style="text-align:center;float:left;">{{departureDate}} </h1>
-            <h1 style="text-align:center;float:right;">{{arrivalDate}}</h1>
+
+             <div id="snow">
+
+            <h1 class="text-color-bold" style="text-align:center">{{departureDate}}</h1>
+            <h3 class="text-color" style="text-align:center">DEPARTURE DATE</h3>
+            <ion-icon class="icon-prop" name="md-arrow-round-down"></ion-icon>
+            <h1 class="text-color-bold" style="text-align:center">{{arrivalDate}}</h1>
+            <h3 class="text-color" style="text-align:center">ARRIVAL DATE</h3>
             
-          
+            </div>  
           
            <!--Flight Duration:{{duration}}<br> 
            Departure Terminal:{{departureTerminal}}<br>i
            Arrival Terminal:{{arrivalTerminal}}<br>-->
            
-        </ion-card-content>  
+        </ion-card-content>
       
       </ion-card>
 

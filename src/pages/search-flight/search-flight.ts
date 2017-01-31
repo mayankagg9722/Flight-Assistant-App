@@ -26,26 +26,7 @@ export class SearchFlightPage implements AfterViewInit{
   }
 
   ngAfterViewInit() {
-                $('.button-inner').click(function() {
-                    setTimeout(function() {
-                        $('#container').removeClass('beginning');
-                        setTimeout(function() {
-                            $('#container').addClass('hover');
-                            setTimeout(function() {
-                                $('#container').addClass('fly_away_first');
-                                setTimeout(function() {
-                                    $('#container').addClass('fly_away');
-                                    setTimeout(function(){
-                                        // $('#plate').addClass('front');
-                                        $('#container').removeClass('fly_away fly_away_first hover').addClass('beginning');
-                                        $('.curvable').removeClass('curved');
-                                    },3000);
-                                }, 600);
-                            });
-                        });
-                    });
-                });
-    }
+      }
 
   search(flightcode,flightnumber,myDate){
     var myDateDiv=myDate.substr(0,10).split('-');
