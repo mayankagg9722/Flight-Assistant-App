@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {AuthData} from '../../providers/auth-data';
 import { ToastController } from 'ionic-angular';
@@ -14,13 +14,21 @@ import {SearchFlightPage} from '../search-flight/search-flight';
   templateUrl: 'login.html',
   providers:[AuthData]
 })
-export class LoginPage {
+export class LoginPage implements AfterViewInit{
 
   token:string[]
   username:string
   password:string
 
   constructor(public navCtrl: NavController, public navParams: NavParams ,private auth:AuthData,private toastCtrl:ToastController ) {}
+
+ngAfterViewInit() {
+  $(document).ready(function(e){
+   $('h6').on('click',function(){
+      $('.social').stop().slideToggle();
+   });
+})
+}
 
  login(username, password) {
     this.auth.login(username, password).subscribe(res => {
@@ -58,4 +66,6 @@ export class LoginPage {
         toast.present();
  }
 
+
 }
+

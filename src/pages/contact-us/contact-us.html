@@ -1,0 +1,33 @@
+    <ion-header>
+    <ion-navbar color='dark'>
+        <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Contact Us</ion-title>
+    </ion-navbar>
+    </ion-header>
+
+    <ion-content padding class="background-color">
+
+        <form> 
+            <label>   
+                <input type="text" required #flightcode/>  
+                    <div class="label-text">Flight Code</div> 
+                     </label> 
+                      <label>    
+                <input type="text" required #flightnumber/>   
+            <div class="label-text">Flight Number</div>
+        </label>  
+             <ion-item class="date-customise">
+              <ion-label>Date</ion-label>
+              <ion-datetime displayFormat="YYYY/MM/DD" name="displayDate" min="2017" max="2018" [(ngModel)]="myDate"></ion-datetime>
+            </ion-item>
+            <button class="button-new" (click)="search(flightcode.value,flightnumber.value,myDate)">Find My Flight</button>
+
+    </form>
+    
+    <div class="plane">
+        <img src="../../assets/icon/plane.png" />
+    </div>
+
+    </ion-content>

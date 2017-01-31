@@ -1,3 +1,149 @@
 page-login {
 
+.page-color {
+    background-color: #42A5F5
+}
+
+section {
+    display: block;
+}
+
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+input:focus, 
+textarea:focus {
+    outline: none;
+}
+
+label, 
+select, 
+button, 
+input[type="submit"], 
+input[type="radio"], 
+input[type="checkbox"] 
+input[type="button"] {
+    cursor: pointer;
+}
+
+a, 
+a:visited, 
+a:active {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+::selection {
+    background: #ed327b;
+    color: #fff;
+}
+
+::-moz-selection {
+    background: #ed327b;
+    color: #fff;
+}
+
+* {
+    font-size:100%;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+* {
+  font-family:"Helvetica Neue", Helvetica, Arial;
+}
+
+h5 {
+  text-align:center;
+  margin-top:5px;
+  color:rgba(0,0,0,.3);
+}
+
+h5 > a,a:visited {
+  color:#fff;
+  text-decoration:underline;
+}
+
+h5 > a:hover {
+  text-decoration:none;
+}
+
+form {
+  background:#fff;
+  border-radius:6px;
+  padding:20px;
+  padding-top:20px;
+  width:300px;
+  margin:50px auto;
+  box-shadow:5px 5px 0px rgba(0,0,0,.1);
+}
+
+h1 {
+  text-align:center;
+  font-size:2.4em;
+  font-weight:700;
+  color:#ccc;
+  margin-bottom:24px;
+}
+
+span {
+  font-weight:200;
+}
+
+input {
+  width:100%;
+  background:#f5f5f5;
+  border:0;
+  padding:20px;
+  border-radius:6px;
+  margin-bottom:10px;
+  border:1px solid #eee;
+}
+
+.btn {
+  position:relative;
+  width:100%;
+  padding:20px;
+  border-radius:6px;
+  border:0;
+  background:#f26964;
+  font-size:1.2em;
+  color:#fff;
+  text-shadow:1px 1px 0px rgba(0,0,0,.1);
+  box-shadow:0px 3px 0px #c1524e;
+}
+
+.btn:active {
+  top:3px;
+  box-shadow:none;
+}
+
+h6 {
+  text-align:center;
+  padding:20px;
+  padding-top:35px;
+  color:#777;
+  cursor:pointer;
+}
+
+.social {
+  display:none;
+}
+
+
+.forgotpassword {
+  background:#db4a39;
+  box-shadow:0px 3px 0px #b93f31;
+}
+
 }

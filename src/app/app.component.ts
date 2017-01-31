@@ -9,6 +9,7 @@ import {CabPage} from '../pages/cab/cab';
 import {CabHistoryPage} from '../pages/cab-history/cab-history';
 import {LoginPage} from '../pages/login/login';
 import {SignupPage} from '../pages/signup/signup';
+import {ContactUsPage} from '../pages/contact-us/contact-us';
 
 @Component({
   templateUrl: 'app.html'
@@ -16,7 +17,7 @@ import {SignupPage} from '../pages/signup/signup';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = CabPage;
+  rootPage: any = SearchFlightPage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -29,7 +30,8 @@ export class MyApp {
       {title: 'FlightHistory',component:FlightHistoryPage},
       {title: 'CabPage',component:CabPage},
       {title: 'Login',component:LoginPage},
-      {title: 'Signup',component:SignupPage}
+      {title: 'Signup',component:SignupPage},
+      {title: 'Contact Us', component:ContactUsPage}
     ];
 
   }
