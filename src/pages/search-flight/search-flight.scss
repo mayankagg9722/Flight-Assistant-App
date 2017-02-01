@@ -84,22 +84,52 @@ label input:valid + .label-text {
   background-color: #fff;
   border: 2px solid white;
   border-radius: 27px;
-  color: #303F9F;
+  color: #494E6B;
   cursor: pointer;
   font-size: 20px;
-  margin-top: 20px;
+  margin-top: 30px;
   padding: 15px 30px;
   text-transform: uppercase;
   transition: all 200ms;
 }
 
 .date-customise {
-  background-color: #303F9F;
+  width: calc(100% - 20px);
+  background-color: #fff;
   border-radius: 10px;
-  color: #fff;
+  color: #494E6B;
   font-size: 20px;
   margin-top: 20px;
+  margin-left: 10px;
   text-transform: uppercase;
   
+}
+
+#gradient
+{
+  width: 100%;
+  height: 800px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.PADDER-CENTER {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
 }
 
