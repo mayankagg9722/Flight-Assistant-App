@@ -22813,6 +22813,20 @@ label input:valid + .label-text {
   margin: 0px;
 }
 
+.PADDER-CENTER {
+  width: 100%;
+  height: 100%;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
 page-signup .page-color {
   background-color: #42A5F5;
 }

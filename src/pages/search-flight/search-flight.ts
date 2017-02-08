@@ -22,7 +22,7 @@ export class SearchFlightPage implements AfterViewInit{
  myDate:String = new Date().toISOString();
   
   constructor(public navCtrl: NavController, public navParams: NavParams,private flightData:FlightData,private toastCtrl: ToastController) {
-    
+      
   }
 
   ngAfterViewInit() {

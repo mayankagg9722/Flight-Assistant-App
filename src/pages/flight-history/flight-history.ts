@@ -30,6 +30,8 @@ export class FlightHistoryPage  {
   departureTerminal: string;
   dep_weather:string;
   ari_weather:string;
+  dep_weather_condition:string;
+  ari_weather_condition:string;
   
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private auth: AuthData, private flightData: FlightData, public toastCtrl: ToastController) {
@@ -43,7 +45,7 @@ export class FlightHistoryPage  {
         // console.log(res);
         if (res.status == false) {
           let toast = this.toastCtrl.create({
-            message: "Not added any flights yet.",
+            message: "No flights added!",
             duration: 3000,
             position: 'bottom'
           });
@@ -78,7 +80,7 @@ export class FlightHistoryPage  {
         () => console.log('Completed')
     } else {
       let toast = this.toastCtrl.create({
-        message: 'First login to see history',
+        message: 'Please login to see your flight history!',
         duration: 3000,
         position: 'bottom'
       });
@@ -92,12 +94,13 @@ export class FlightHistoryPage  {
   getDepWeather(code) {
     this.flightData.weather(code).subscribe(res => {
       // console.log(res.weather);
-      this.dep_weather=res.weather.temperatureCelsius+'°C'+"\n\tSky Condition:"+res.weather.conditions.skyConditions[0].coverage;
+      this.dep_weather=String(parseInt(res.weather.temperatureCelsius)) + "°C";
+      this.dep_weather_condition=res.weather.conditions.skyConditions[0].coverage;
     },
       err => {
         console.log(err);
         let toast = this.toastCtrl.create({
-          message: "Not able to fetch weather",
+          message: "Not able to fetch the weather",
           duration: 3000,
           position: 'bottom'
         });
@@ -108,7 +111,8 @@ export class FlightHistoryPage  {
 
     getAriWeather(code) {
     this.flightData.weather(code).subscribe(res => {
-      this.ari_weather=res.weather.temperatureCelsius+'°C'+"\n\tSky Condition:"+res.weather.conditions.skyConditions[0].coverage;
+      this.ari_weather=String(parseInt(res.weather.temperatureCelsius)) + "°C";
+      this.ari_weather_condition=res.weather.conditions.skyConditions[0].coverage;
     },
       err => {
         console.log(err);
@@ -128,7 +132,7 @@ export class FlightHistoryPage  {
 
   share(){
     console.log("share info");
-    //share info to any watsapp contact
+    //share info to any whatsapp contact
   }
 
 }
