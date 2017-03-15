@@ -1,4 +1,4 @@
-import { Component ,AfterViewInit} from '@angular/core';
+import { Component ,OnInit} from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {FlightData} from '../../providers/flight-data';
 import {FlightDetailsPage} from '../flight-details/flight-details';
@@ -12,12 +12,13 @@ declare var $:any;
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
+
 @Component({
   selector: 'page-search-flight',
   templateUrl: 'search-flight.html',
   providers:[FlightData]
 })
-export class SearchFlightPage implements AfterViewInit{
+export class SearchFlightPage implements OnInit{
 
  myDate:String = new Date().toISOString();
   
@@ -25,9 +26,8 @@ export class SearchFlightPage implements AfterViewInit{
       
   }
 
-  ngAfterViewInit() {
-
-       var $div = document.getElementById("gradient");
+  ngOnInit()  {
+      var $div = document.getElementById("gradient");
           // rgb vals of the gradients
           var gradients = [
             { start: [128,179,171], stop: [30,41,58] },
@@ -128,16 +128,21 @@ export class SearchFlightPage implements AfterViewInit{
 
           // go go go!
           window.requestAnimationFrame(updateGradient);
-      }
+  }
+
+  // ngAfterViewInit() {
+
+       
+  //     }
 
   search(flightcode,flightnumber,myDate){
-    var myDateDiv=myDate.substr(0,10).split('-');
-    var mydate=myDateDiv[0]+"/"+myDateDiv[1]+"/"+myDateDiv[2];
+    var myDateDiv = myDate.substr(0,10).split('-');
+    var mydate = myDateDiv[0] + "/" + myDateDiv[1] + "/" + myDateDiv[2];
     // console.log(mydate);
-    this.flightData.searchFlight(flightcode,flightnumber,mydate).subscribe(res=>{
+    this.flightData.searchFlight(flightcode,flightnumber,mydate).subscribe(res => {
       console.log(res.body);
       if(res.body != null){
-        if((res.body.error!=undefined) || res.body.flightStatuses.length==0 ){ 
+        if((res.body.error != undefined) || res.body.flightStatuses.length == 0 ){ 
         let toast = this.toastCtrl.create({
           message: "Incorrect flight code or number",
           duration: 3000,

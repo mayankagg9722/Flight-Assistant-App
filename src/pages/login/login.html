@@ -14,6 +14,8 @@
   </ion-navbar>
 </ion-header>
 <ion-content class="page-color" scroll="false" padding>
+
+  <div *ngIf="!isLogin">
   
  <form>
   <h1>LOGIN</h1>
@@ -26,5 +28,10 @@
   </div>
 </form>
 
+</div>
+
+<div *ngIf="isLogin">
+  <button class="btn" (click)="logout()" >Log Out</button>
+</div>
 
 </ion-content>

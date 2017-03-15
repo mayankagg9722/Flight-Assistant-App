@@ -19,8 +19,10 @@ export class LoginPage implements AfterViewInit{
   token:string[]
   username:string
   password:string
+  isLogin:boolean
 
-  constructor(public navCtrl: NavController, public navParams: NavParams ,private auth:AuthData,private toastCtrl:ToastController ) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams ,private auth:AuthData,private toastCtrl:ToastController ) {
+  }
 
 ngAfterViewInit() {
   $(document).ready(function(e){
@@ -30,7 +32,7 @@ ngAfterViewInit() {
 })
 }
 
- login(username, password) {
+ login(username, password, isLogin) {
     this.auth.login(username, password).subscribe(res => {
       console.log(res);
       this.token = res;
@@ -40,11 +42,13 @@ ngAfterViewInit() {
           duration: 3000,
           position: 'bottom'
         });
+        this.isLogin = true;
         toast.present();
         this.navCtrl.push(SearchFlightPage);
       }
     },
     err=>{
+      this.isLogin = false;
       console.log(err);
        let toast = this.toastCtrl.create({
           message: "Not a valid username or password",
@@ -56,16 +60,18 @@ ngAfterViewInit() {
     () => console.log('Completed')
  }
 
- logout(){
+ logout(isLogin){
    this.auth.logout();
    let toast = this.toastCtrl.create({
           message: "Logout successfully",
           duration: 3000,
           position: 'bottom'
         });
+        this.isLogin = false;
         toast.present();
+        this.navCtrl.push(SearchFlightPage);
+        console.log(this.isLogin);
  }
-
 
 }
 

@@ -43,9 +43,9 @@ page-flight-history {
 
     .starry {
   	animation: starry_star 5s ease-in-out infinite;
-	background: #fff;
-	border-radius: 50%;  
-	box-shadow:  
+  	background: #fff;
+	  border-radius: 50%;  
+	  box-shadow:  
       	#FFFFFF 26px 7px 0 -1px, 
       	rgba(255,255,255,0.1) -36px -19px 0 -1px, 
       	rgba(255,255,255,0.1) -51px -34px 0 -1px,
@@ -60,13 +60,13 @@ page-flight-history {
       	rgba(255,255,255,0.1) 60px -67px 0 -1px,  
       	#FFFFFF 34px -127px,
       	rgba(255,255,255,0.1) -26px -103px 0 -1px;
-	height: 4px;
-	width: 4px; 
-  	margin-left: -10px;
-	opacity: 1;
-	position: absolute;
-  	left: 777px; 
-  	top: 150px;
+        height: 4px;
+        width: 4px; 
+        margin-left: -10px;
+        opacity: 1;
+        position: absolute;
+        left: 777px; 
+        top: 150px;
 }
 .starry:after { 
 	animation: starry 5s ease-in-out infinite;
