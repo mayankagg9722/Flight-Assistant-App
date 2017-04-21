@@ -4,6 +4,17 @@ page-flight-details {
     background-size: cover;
     height: 100%;
 }
+.text-color-bold {
+    color: #fff;
+    font-weight: bold;
+}
+.text-color {
+    color: #fff;
+}
+.icon-prop  {
+    font-size: 60px;
+    color: white;
+}
 .page-color {
     background-color: #BBDEFB
 }
@@ -166,4 +177,34 @@ body {
     0% {margin-left: 1000px;}
     100% {margin-left: -1000px;}
 }
+
+
+
+#snow{
+	background: none;
+	background-image: url('http://www.wearewebstars.dk/codepen/img/s1.png'), url('http://www.wearewebstars.dk/codepen/img//s2.png'), url('http://www.wearewebstars.dk/codepen/img//s3.png');
+	
+	z-index:1;
+	-webkit-animation: snow 10s linear infinite;
+	-moz-animation: snow 10s linear infinite;
+	-ms-animation: snow 10s linear infinite;
+	animation: snow 10s linear infinite;
 }
+@keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}
+@-moz-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 400px 1000px, 200px 400px, 100px 300px;}
+}
+@-webkit-keyframes snow {
+  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
+  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
+}
+
+}
+

@@ -1,58 +1,40 @@
-   <!--
-        Generated template for the SearchFlight page.
 
-        See http://ionicframework.com/docs/v2/components/#navigation for more info on
-        Ionic pages and navigation.
-      -->
-      <ion-header>
-        <ion-navbar color='dark'>
-          <button ion-button menuToggle>
-            <ion-icon name="menu"></ion-icon>
-          </button>
-          <ion-title>Search Your Flight</ion-title>
-        </ion-navbar>
-      </ion-header>
+    <ion-header>
+    <ion-navbar color='dark'>
+        <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Search Your Flight</ion-title>
+    </ion-navbar>
+    </ion-header>
 
-      <ion-content padding class="search-flight-background">
+    <ion-content>
 
-    <div id="container" class="beginning">
-        <ion-card>
-          
-          <ion-card-header align="center">
-            Search Your Flight 
-          </ion-card-header>
-          <ion-card-content> 
-            
-      <ion-list>
+        <div id="gradient" ion-fixed>
 
-        <ion-item>
-            <ion-label floating>Flight Code</ion-label>
-            <ion-input type="text" #flightcode></ion-input>
-          </ion-item>
+        <form> 
+            <label>   
+                <input type="text" required #flightcode/>  
+                    <div class="label-text">Flight Code</div> 
+                     </label> 
+                      <label>    
+                <input type="text" required #flightnumber/>   
+            <div class="label-text">Flight Number</div>
+        </label>  
+             <ion-item class="date-customise">
+              <ion-label>Date</ion-label>
+              <ion-datetime displayFormat="YYYY/MM/DD" name="displayDate" min="2017" max="2018" [(ngModel)]="myDate"></ion-datetime>
+            </ion-item>
+                 
+            <button class="button-new" (click)="search(flightcode.value,flightnumber.value,myDate)">Find My Flight</button>
 
-          <ion-item>
-            <ion-label floating>Flight Number</ion-label>
-            <ion-input type="text" #flightnumber></ion-input>
-          </ion-item>
+    </form>
+    
+    <div class="plane">
+        <img src="assets/img/plane.png" />
+    </div>
 
-          <div padding></div>
+    </div>
 
-          <ion-item>
-            <ion-label>Date</ion-label>
-            <ion-datetime displayFormat="YYYY/MM/DD" name="displayDate" min="2017" max="2018" [(ngModel)]="myDate"></ion-datetime>
-          </ion-item>
-          <div class="anim">
-          <ion-item > 
-            <button (click)="search(flightcode.value,flightnumber.value,myDate)" ion-button large block>
-              Search</button>
-          </ion-item>
-          </div>
+    </ion-content>
 
-        </ion-list>
-
-          </ion-card-content>
-        </ion-card>
-
-        </div>
-         
-      </ion-content>

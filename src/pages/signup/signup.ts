@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AuthData } from '../../providers/auth-data';
 import { ToastController } from 'ionic-angular';
@@ -15,9 +15,17 @@ import {SearchFlightPage} from '../search-flight/search-flight'
   templateUrl: 'signup.html',
   providers: [AuthData]
 })
-export class SignupPage {
+export class SignupPage implements AfterViewInit {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private auth: AuthData, private toastCtrl: ToastController, public alertCtrl: AlertController) { }
+
+ngAfterViewInit() {
+  $(document).ready(function(e){
+   $('h6').on('click',function(){
+      $('.social').stop().slideToggle();
+   });
+})
+}
 
   signup(email, password, username, fname, lname, number) {
     this.auth.signup(email, password, username, fname, lname, number).subscribe(res => {
@@ -120,7 +128,7 @@ export class SignupPage {
        console.log(res);
       if (res.status == false) {
         let toast = this.toastCtrl.create({
-          message: "Wrong otp",
+          message: "Wrong OTP",
           duration: 3000,
           position: 'bottom'
         });
@@ -151,6 +159,10 @@ export class SignupPage {
   }
 
 }
+
+
+
+
 
 
 

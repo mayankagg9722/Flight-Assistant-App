@@ -12,57 +12,109 @@
     <ion-title>Flight History</ion-title>
   </ion-navbar> 
 </ion-header>
-<ion-content padding >
-    <ion-fab top right edge (click)="share()">
+
+<ion-content class="page-color">
+    <!--<ion-fab top right edge (click)="share()">
     <button ion-fab>
       <ion-icon name="share"></ion-icon>
     </button>
-  </ion-fab> 
+  </ion-fab> -->
 
   <ion-list>
-    <div padding [hidden]="!divShow">
-  <ion-fab right bottom (click)="nearby()">
+    <div>
+  <!--<ion-fab right bottom (click)="nearby()">
           <button ion-fab>
            <ion-icon name="locate"></ion-icon>
            </button>
-  </ion-fab> 
-      <ion-card>
-        <ion-card-header>
+  </ion-fab> -->
+      <ion-card class="background-color-one">
+        <ion-card-header align="center">
+          <div class="text-color">
           <ion-icon name="jet"></ion-icon>
           <h1>Your Flight Information</h1>
+          </div>
         </ion-card-header>
-        <ion-card-content>
-           Flight name: {{flightName}}<br>
-           Departure: {{departue}}<br> 
-           Arrival: {{arrival}}<br>
-           Flight Duration:{{duration}}<br> 
-           Departure Terminal:{{departureTerminal}}<br>
-           Arrival Terminal:{{arrivalTerminal}}<br>
-           Arrival Date:{{arrivalDate}}<br> 
-           Departure Date:{{departureDate}}
+        <hr>
+        <ion-card-content class="text-color">
+          <div style="float: left;" class="margin-card">
+           <h2>Flight name</h2>   
+           <h2>Departure</h2>
+           <h2>Arrival</h2>
+           <h2>Flight Duration</h2>
+           <h2>Departure Terminal</h2>
+           <h2>Arrival Terminal</h2>
+           <h2>Arrival Date</h2>
+           <h2>Departure Date</h2>
+           </div>
+           <div style="float: right;">
+           <h2>{{flightName}}</h2>
+           <h2>{{departue}}</h2>
+           <h2>{{arrival}}</h2>
+           <h2>{{duration}} min</h2>
+           <h2>{{departureTerminal}}</h2>
+           <h2>{{arrivalTerminal}}</h2>
+           <h2>{{arrivalDate}}</h2>
+           <h2>{{departureDate}}</h2>
+           </div>
         </ion-card-content>
       </ion-card>
 
-         <ion-card>
+         <ion-card class="background-color-two">
         <ion-card-header>
           <ion-icon name="partly-sunny"></ion-icon>
-          <h1>Weather: {{departue}} </h1>
+          <h1>{{departue}}</h1><hr>
         </ion-card-header>
+        <div style="float: left;">
         <ion-card-content>
-          Weather:{{dep_weather}}
+          <h1 style="font-size:40px" class="text-color-dark">{{dep_weather}}</h1>
         </ion-card-content>
+        </div>
+        <!--********************************************-->
+         <div style="float: right;">
+         <div class="icon_sun">
+            <div class="cloud"></div>
+            <div class="sun">
+              <div class="rays"></div>
+            </div>
+            <div class="rain"></div>
+          </div>
+         </div>
+
+         <h2 align="center" class="text-color-dark1">{{dep_weather_condition}}</h2>
+
       </ion-card>
 
-       <ion-card>
+       <ion-card class="background-color-two">
         <ion-card-header>
-          <ion-icon name="cloud"></ion-icon>
-          <h1>Weather: {{arrival}} </h1>
+          <ion-icon name="cloudy"></ion-icon>
+          <h1>{{arrival}}</h1><hr>
         </ion-card-header>
+        <div style="float: left;">
         <ion-card-content>
-          Weather:{{ari_weather}}
+          <h1 style="font-size:40px" class="text-color-dark">{{ari_weather}}</h1>
+          
         </ion-card-content>
-      </ion-card> 
+        </div>
+        <!--********************************************-->
+         <div style="float: right;">
+         <div class="icon_sun">
+            <div class="cloud"></div>
+            <div class="sun">
+              <div class="rays"></div>
+            </div>
+            <div class="rain"></div>
+          </div>
+         </div>
+
+         <h2 align="center" class="text-color-dark1">{{ari_weather_condition}}</h2>
+
+      </ion-card>
     </div>
+
   </ion-list>
 
+  <div class="buttoncenter">
+    <!--<button ion-button round (click)="nearby()">Nearby Places</button>-->
+    <button class="button-new" (click)="nearby()">Nearby Places</button>
+  </div>
 </ion-content>
