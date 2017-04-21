@@ -1,13 +1,12 @@
-# Flight-Assistant-App
+#FLIGHT VIEWER
 
-Fight Viewer 
-Developed on Ionic Framework and AngularJs.
+##Developed on Ionic Framework and AngularJs.
 
 
 ![pageres](screenshots/cover.png "Main")
 
 
-![pageres](screenshots/login.png "login")
+![pageres](screenshots/login.jpg "login")
 
 
 ![alt text](screenshots/details1.jpg "Main")![alt text](screenshots/details2.jpg "Main")
