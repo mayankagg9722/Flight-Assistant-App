@@ -28,10 +28,10 @@ export class MyApp {
     this.pages = [
       {title: 'SearchFlight',component:SearchFlightPage},
       {title: 'FlightHistory',component:FlightHistoryPage},
-      {title: 'CabPage',component:CabPage},
+      // {title: 'CabPage',component:CabPage},
       {title: 'Login',component:LoginPage},
       {title: 'Signup',component:SignupPage},
-      {title: 'Contact Us', component:ContactUsPage}
+      // {title: 'Contact Us', component:ContactUsPage}
     ];
 
   }

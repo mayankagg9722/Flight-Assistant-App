@@ -22586,6 +22586,29 @@ page-flight-history .background-color-three {
   background-color: #fff;
 }
 
+page-flight-history .buttoncenter {
+  text-align: center;
+}
+
+page-flight-history .button-new {
+  background-color: #fff;
+  border: 2px solid white;
+  border-radius: 27px;
+  color: #2d4262;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  transition: all 200ms;
+}
+
+page-flight-history .button {
+  background: #fff;
+  color: #2d4262;
+}
+
 page-flight-history hr {
   display: block;
   height: 1px;
@@ -22920,6 +22943,33 @@ page-flight-history .rain:after {
 
 page-flight-history-details ion-icon {
   font-size: 25px;
+}
+
+page-flight-history-details hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 5px solid #fff;
+}
+
+page-flight-history-details .page-color {
+  background-color: #D3D4D9;
+}
+
+page-flight-history-details .background-color-one {
+  background-color: #4667A8;
+}
+
+page-flight-history-details .text-color {
+  color: #fff;
+}
+
+page-flight-history-details .iconcenter {
+  text-align: center;
+}
+
+page-flight-history-details .icon {
+  color: #fff !important;
 }
 
 page-login .page-color {

@@ -30,6 +30,28 @@ page-flight-history {
         background-color: #fff;
     }
 
+    .buttoncenter {
+    text-align: center;
+    }
+
+    .button-new {
+      background-color: #fff;
+      border: 2px solid white;
+      border-radius: 27px;
+      color: #2d4262;
+      cursor: pointer;
+      font-size: 20px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      padding: 15px 30px;
+      text-transform: uppercase;
+      transition: all 200ms;
+    }
+
+  .button {
+      background: #fff;
+      color: #2d4262;
+    }
     hr {
         display: block;
         height: 1px;

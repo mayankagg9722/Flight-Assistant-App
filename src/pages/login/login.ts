@@ -19,9 +19,10 @@ export class LoginPage implements AfterViewInit{
   token:string[]
   username:string
   password:string
-  isLogin:boolean
+  isLogin:boolean = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams ,private auth:AuthData,private toastCtrl:ToastController ) {
+   console.log(this.isLogin);
   }
 
 ngAfterViewInit() {

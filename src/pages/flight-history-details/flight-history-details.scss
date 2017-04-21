@@ -1,10 +1,35 @@
 page-flight-history-details {
 
-
-
-
 ion-icon {
   font-size: 25px;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 5px solid #fff;
+    }
+
+.page-color {
+  background-color:  #D3D4D9;
+}
+
+.background-color-one   {
+    background-color:  #4667A8;
+}
+
+.text-color {
+  color: #fff;
+}
+
+
+.iconcenter {
+    text-align: center;
+}
+
+.icon {
+color: #fff !important;
 }
    
 }
