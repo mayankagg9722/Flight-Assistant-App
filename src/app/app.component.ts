@@ -17,11 +17,8 @@ import {ContactUsPage} from '../pages/contact-us/contact-us';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-<<<<<<< HEAD
   rootPage: any = LoginPage;
-=======
-  rootPage: any = SearchFlightPage;
->>>>>>> uddish
+
 
   pages: Array<{title: string, component: any}>;
 
